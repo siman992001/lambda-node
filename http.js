@@ -5,7 +5,7 @@ exports.handler = async function(event){
     const promise = new Promise(function(resolve, reject){
         https.get(url, (res) => {
             res.on('data', (d) => {
-                console.log('*************success*********')
+                console.log('*************success*********', res.statusCode)
                 process.stdout.write(d);
             });
             
