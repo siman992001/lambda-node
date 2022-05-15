@@ -14,7 +14,7 @@ exports.handler = (event, context, callback) => {
         }
         throw err
       } else {
-        console.log('***************', data, '***************')
+        console.log('****************', data, '****************')
         secret = data.SecretString
         console.log('secret is', secret)
       }
