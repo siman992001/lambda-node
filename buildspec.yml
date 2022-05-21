@@ -9,7 +9,7 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip lambda-node.zip http.js
+      - zip lambda-node.zip env.js
       - ls -la
   post_build:
     commands:
