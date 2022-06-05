@@ -9,7 +9,7 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip lambda-node.zip calculate.js calculator.js
+      - zip lambda-node.zip assert/*
       - ls -la
   post_build:
     commands:
