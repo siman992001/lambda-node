@@ -5,14 +5,13 @@ phases:
       nodejs: 14
     commands:
       - echo "Installing dependencies..."
-      - npm install assert
       - ls -ls node_modules
       - ls -la node_modules/assert
   build:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip lambda-node.zip assert/*
+      - zip lambda-node.zip assert/* node_modules/assert/*
       - ls -la
   post_build:
     commands:
