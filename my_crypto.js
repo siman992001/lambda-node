@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-async function my_hash(event, context){
+exports.my_hash = async function(event, context){
     let hash1 = crypto.createHash('sha256').update('ramon').digest('hex');
     console.log('hash1:', hash1)
     let hash2 = crypto.createHash('sha256').update('ramon').digest('hex');
@@ -12,5 +12,5 @@ async function my_hash(event, context){
     console.log('hmac2:', hmac2)
 }
 
-//my_hash()
+//exports.my_hash()
 
