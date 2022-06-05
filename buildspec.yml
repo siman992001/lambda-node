@@ -6,6 +6,8 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm install assert
+      - ls -ls node_modules
+      - ls -la node_modules/assert
   build:
     commands:
       - echo "Zipping deployment package..."
