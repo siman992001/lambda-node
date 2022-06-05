@@ -14,3 +14,4 @@ exports.handler = async function (event, context) {
   console.log('2 == "2"', 2 == '2')
 }
 
+//exports.handler()
