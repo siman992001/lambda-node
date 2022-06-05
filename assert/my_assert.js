@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-async function handler (event, context) {
+exports.handler = async function(event, context) {
   let x = 4
   let y = 5
   try {
@@ -14,4 +14,4 @@ async function handler (event, context) {
   console.log('2 == "2"', 2 == '2')
 }
 
-//handler()
+//exports.handler()
