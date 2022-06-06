@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "assert": "^2.0.0",
-    "aws-sdk": "^2.1135.0"
+    "aws-sdk": "^2.1135.0",
+    "yargs": "^17.5.1"
   }
 }

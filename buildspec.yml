@@ -11,7 +11,7 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip lambda-node.zip assert/my_assert.js
+      - zip lambda-node.zip my_crypto/secretmsg.js node_modules/yargs node_modules/yargs-parser
       - ls -la
   post_build:
     commands:
