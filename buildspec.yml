@@ -6,12 +6,12 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm install
-      - ls -ls node_modules
+      - ls -la node_modules
   build:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip lambda-node.zip my_crypto/secretmsg.js
+      - zip lambda-node.zip dynamo/s3.js
       - ls -la
   post_build:
     commands:
