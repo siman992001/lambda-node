@@ -73,7 +73,7 @@ exports.handler = function (event, context) {
           }
         }
         //console.log(params)
-        if (count < 627) {
+        if (count < 1227) {
           //console.log(`count is ${count}`)
           docClient.put(params, function (err, data) {
             if (err) {
