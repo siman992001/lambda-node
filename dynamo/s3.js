@@ -71,19 +71,19 @@ exports.handler = function (event, context) {
             info: movie.info
           }
         }
-
-        docClient.put(params, function (err, data) {
-          if (err) {
-            console.error(
-              'Unable to add movie',
-              params,
-              '. Error JSON:',
-              JSON.stringify(err, null, 2)
-            )
-          } else {
-            console.log('PutItem succeeded:', params)
-          }
-        })
+        console.log(params)
+        // docClient.put(params, function (err, data) {
+        //   if (err) {
+        //     console.error(
+        //       'Unable to add movie',
+        //       params,
+        //       '. Error JSON:',
+        //       JSON.stringify(err, null, 2)
+        //     )
+        //   } else {
+        //     console.log('PutItem succeeded:', params)
+        //   }
+        // })
       })
     })
   }
@@ -109,4 +109,4 @@ function readS3 () {
 }
 
 //exports.handler({ action: 'CREATE' })
-//exports.handler()
+exports.handler()
