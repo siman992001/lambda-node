@@ -109,4 +109,4 @@ function readS3 () {
 }
 
 //exports.handler({ action: 'CREATE' })
-exports.handler()
+//exports.handler()
