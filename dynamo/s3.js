@@ -9,7 +9,6 @@ var docClient = new AWS.DynamoDB.DocumentClient()
 var ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' })
 
 exports.handler = async function (event, context) {
-  console.log('****event', event)
   console.log('****event', event.action)
   if (event && event.action == 'CREATE') {
     const create_params = {
@@ -39,13 +38,16 @@ exports.handler = async function (event, context) {
       },
       TableName: 'movies'
     }
+    console.log('creating table movies')
     //Create table in DynamoDB
     ddb.createTable(create_params, function (err, data) {
+      console.log('creating table movies callback function')
       if (err) console.log(err, err.stack)
       // an error occurred
       else console.log(data)
     })
   } else {
+    console.log('writing to table movies')
     readS3().on('finish', () => {
       console.log(`Finished downloading json file`)
       var start = Date.now()
