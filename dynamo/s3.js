@@ -61,8 +61,9 @@ exports.handler = function (event, context) {
       )
 
       console.log(`size is ${all_movies.length}`)
-
+      var count = 0
       all_movies.forEach(function (movie) {
+        count++
         var params = {
           TableName: 'movies',
           Item: {
@@ -71,19 +72,22 @@ exports.handler = function (event, context) {
             info: movie.info
           }
         }
-        console.log(params)
-        // docClient.put(params, function (err, data) {
-        //   if (err) {
-        //     console.error(
-        //       'Unable to add movie',
-        //       params,
-        //       '. Error JSON:',
-        //       JSON.stringify(err, null, 2)
-        //     )
-        //   } else {
-        //     console.log('PutItem succeeded:', params)
-        //   }
-        // })
+        //console.log(params)
+        if (count < 2) {
+          console.log(`count is ${count}`)
+          docClient.put(params, function (err, data) {
+            if (err) {
+              console.error(
+                'Unable to add movie',
+                params,
+                '. Error JSON:',
+                JSON.stringify(err, null, 2)
+              )
+            } else {
+              console.log('PutItem succeeded:', params)
+            }
+          })
+        }
       })
     })
   }
