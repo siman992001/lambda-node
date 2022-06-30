@@ -8,8 +8,8 @@ var docClient = new AWS.DynamoDB.DocumentClient()
 
 var ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' })
 
-exports.handler = async function (event, context) {
-  console.log('****event', event.action)
+exports.handler = function (event, context) {
+  console.log('****event', event)
   if (event && event.action == 'CREATE') {
     const create_params = {
       AttributeDefinitions: [
@@ -109,4 +109,4 @@ function readS3 () {
 }
 
 //exports.handler({ action: 'CREATE' })
-//exports.handler()
+exports.handler()
