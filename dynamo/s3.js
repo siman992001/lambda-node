@@ -73,8 +73,8 @@ exports.handler = function (event, context) {
           }
         }
         //console.log(params)
-        if (count < 2) {
-          console.log(`count is ${count}`)
+        if (count < 25) {
+          //console.log(`count is ${count}`)
           docClient.put(params, function (err, data) {
             if (err) {
               console.error(
@@ -84,7 +84,7 @@ exports.handler = function (event, context) {
                 JSON.stringify(err, null, 2)
               )
             } else {
-              console.log('PutItem succeeded:', params)
+              console.log('PutItem succeeded:', params.Item.title)
             }
           })
         }
